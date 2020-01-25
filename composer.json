@@ -1,0 +1,54 @@
+{
+    "name": "mauricehofman/laravel-language-package",
+    "description": "Use translated default translations of laravel",
+    "keywords": [
+        "mauricehofman",
+        "laravel-language-package"
+    ],
+    "homepage": "https://github.com/mauricehofman/laravel-language-package",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Maurice Hofman",
+            "email": "info@mauricehofman.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mauricehofman\\LaravelLanguagePackage\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mauricehofman\\LaravelLanguagePackage\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mauricehofman\\LaravelLanguagePackage\\LaravelLanguagePackageServiceProvider"
+            ],
+            "aliases": {
+                "LaravelLanguagePackage": "Mauricehofman\\LaravelLanguagePackage\\LaravelLanguagePackageFacade"
+            }
+        }
+    }
+}
